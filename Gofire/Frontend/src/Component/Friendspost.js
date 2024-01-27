@@ -6,7 +6,7 @@ export default function Friendspost(){
 const [friendpost,setfriendspost]=useState([])
     useEffect(()=>{
   
-        axios.get("https://gofirebackend.onrender.com/friendpost",{withCredentials:true})
+        axios.get("https://app-server-4mhe.onrender.com/friendpost",{withCredentials:true})
         .then((res)=>{
           console.log(res.data)
         
