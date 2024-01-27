@@ -13,7 +13,7 @@ export default function Login() {
   const Checkdatas = async (e) => {
     e.preventDefault();
     console.log("checking");
-    await axios.post('https://app-server-4mhe.onrender.com/login', { LEmail, Lpassword }, { withCredentials: true })
+    await axios.post('/login', { LEmail, Lpassword }, { withCredentials: true })
       .then((users) => {
         console.log("login in")
         alert("welcome 🎊🎊🎉🎇 ")
