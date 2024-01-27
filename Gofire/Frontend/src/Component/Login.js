@@ -13,7 +13,7 @@ export default function Login() {
   const Checkdatas = async (e) => {
     e.preventDefault();
     console.log("checking");
-    await axios.post('https://gofirebackend.onrender.com/login', { LEmail, Lpassword }, { withCredentials: true })
+    await axios.post('https://app-server-4mhe.onrender.com/login', { LEmail, Lpassword }, { withCredentials: true })
       .then((users) => {
         console.log("login in")
         alert("welcome 🎊🎊🎉🎇 ")
@@ -27,7 +27,7 @@ export default function Login() {
   };
 
   return (
-    <form action="https://gofirebackend.onrender.com/login" onSubmit={Checkdatas} method="post">
+    <form action="https://app-server-4mhe.onrender.com/login" onSubmit={Checkdatas} method="post">
       <div class="card">
         <div class="circle"></div>
         <div class="circle"></div>
