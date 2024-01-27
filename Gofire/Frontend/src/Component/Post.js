@@ -16,7 +16,7 @@ useEffect(()=>{
     
   const checkdata = async ()=>{
   
- await axios.get("https://gofirebackend.onrender.com/protected",{withCredentials:true})  
+ await axios.get("https://app-server-4mhe.onrender.com/protected",{withCredentials:true})  
  .then((res)=>{
  console.log(res.data);
 
@@ -31,7 +31,7 @@ console.log(" error in checking")
  if(url){
     console.log("Loading") 
     console.log(url)
-    fetch("https://gofirebackend.onrender.com/post",{
+    fetch("https://app-server-4mhe.onrender.com/post",{
         method:"post",
         headers:{
             "Content-Type":"application/json",
