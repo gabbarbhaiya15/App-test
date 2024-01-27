@@ -27,7 +27,7 @@ const addComment = () => {
 
 
 const makeComment = (postId)=>{
-  axios.put("https://gofirebackend.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
+  axios.put("https://app-server-4mhe.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
   .then((res)=>{
     console.log("commented successful")
    setNewComment('')
@@ -39,7 +39,7 @@ console.log("error in client side while making commnent ")
 
 const likepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/like",{postId:id},{withCredentials:true})
+  axios.put("https://app-server-4mhe.onrender.com/like",{postId:id},{withCredentials:true})
   .then((res)=>{
 console.log(res.data)
 setLike(prevstate=>!prevstate)
@@ -72,7 +72,7 @@ console.log(err)
 
 const unlikepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/unlike",{postId:id},{withCredentials:true})
+  axios.put("https://app-server-4mhe.onrender.com/unlike",{postId:id},{withCredentials:true})
   .then((res)=>{
     console.log(res.data)
     setLike(prevstate=>!prevstate)
@@ -103,7 +103,7 @@ console.log(err)
 
       
 useEffect(()=>{
-axios.get("https://gofirebackend.onrender.com/allpost",{withCredentials:true})
+axios.get("https://app-server-4mhe.onrender.com/allpost",{withCredentials:true})
 .then((res)=>{
   console.log(res.data);
   const postarray = res.data.map(items=> items);
