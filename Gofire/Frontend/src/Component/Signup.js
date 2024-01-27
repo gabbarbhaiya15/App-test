@@ -15,7 +15,7 @@ export default function Signup(){
     const [Email, setEmail] = useState("");
     const collectdata =async (e) => { 
       console.log("registration started")
-      await axios.post('https://gofirebackend.onrender.com/register',{input,password, Email},{withCredentials:true})
+      await axios.post('https://app-server-4mhe.onrender.com/register',{input,password, Email},{withCredentials:true})
       .then((res)=>{console.log("collected")
       alert("welcome 😊😊");
       window.location.reload();
