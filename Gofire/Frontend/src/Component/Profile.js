@@ -34,7 +34,7 @@ const [Aside,setaside] = useState(false);
 
  const Logout = async ()=>{
   console.log("Logout");
-await axios.get('https://gofirebackend.onrender.com/logout',{withCredentials:true})
+await axios.get('https://app-server-4mhe.onrender.com/logout',{withCredentials:true})
 
 .then((user)=>{
 console.log("User logged out");
@@ -50,7 +50,7 @@ navigate('/')
 }
  const Deletepost = async (postId)=>{
 
-await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCredentials:true})
+await axios.delete(`https://app-server-4mhe.onrender.com/remove/${postId}`,{withCredentials:true})
  .then((Result)=>{
    console.log(Result)
  })
@@ -70,7 +70,7 @@ await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCr
   
   
   const makeComment = (postId)=>{
-    axios.put("https://gofirebackend.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
+    axios.put("https://app-server-4mhe.onrender.com/comment",{postId :postId,text:newComment},{withCredentials:true})
     .then((res)=>{
       console.log("commented successful")
      setNewComment('')
@@ -87,7 +87,7 @@ await axios.delete(`https://gofirebackend.onrender.com/remove/${postId}`,{withCr
  
  useEffect( ()=>{
   
-axios.get("https://gofirebackend.onrender.com/mypost",{withCredentials:true})
+axios.get("https://app-server-4mhe.onrender.com/mypost",{withCredentials:true})
 .then((res)=>{
    const picArray = res.data.map(post => post);
 setMypic(picArray);
@@ -98,7 +98,7 @@ setMypic(picArray);
 
  const likepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/like",{postId:id},{withCredentials:true})
+  axios.put("https://app-server-4mhe.onrender.com/like",{postId:id},{withCredentials:true})
   .then((res)=>{
 console.log(res.data)
 setLike(prevstate=>!prevstate)
@@ -131,7 +131,7 @@ console.log(err)
 
 const unlikepost=(id)=>{
 
-  axios.put("https://gofirebackend.onrender.com/unlike",{postId:id},{withCredentials:true})
+  axios.put("https://app-server-4mhe.onrender.com/unlike",{postId:id},{withCredentials:true})
   .then((res)=>{
     console.log(res.data)
     setLike(prevstate=>!prevstate)
@@ -169,7 +169,7 @@ console.log(err)
       
   const checkdata = async ()=>{
   
- await axios.get("https://gofirebackend.onrender.com/protected",{withCredentials:true})  
+ await axios.get("https://app-server-4mhe.onrender.com/protected",{withCredentials:true})  
  .then((res)=>{
  console.log(res.data);
 
@@ -184,7 +184,7 @@ console.log(" error in checking")
  if(picurl || coverpicurl){
    console.log(picurl)
     
-    fetch("https://gofirebackend.onrender.com/updateprofile",{
+    fetch("https://app-server-4mhe.onrender.com/updateprofile",{
         method:"put",
         headers:{
             "Content-Type":"application/json",
