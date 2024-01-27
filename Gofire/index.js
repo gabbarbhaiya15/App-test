@@ -43,7 +43,7 @@ mongoose.connect('mongodb+srv://gabbarbhaiya:Shubham123@gabbarbhaiya.2lvenhx.mon
 // CORS configuration
 const corsOptions = {
   credentials: true,
-  origin: 'https://gofirfrontend.onrender.com',
+  origin: 'https://app-client-bkab.onrender.com',
 };
 
 app.use(cors(corsOptions));
