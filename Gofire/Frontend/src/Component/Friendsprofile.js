@@ -18,7 +18,7 @@ export default function Userprofile(){
  
 const follow = async ()=>{
   console.log(userid)
-await axios.put("https://gofirebackend.onrender.com/follow",{followid: userid},{withCredentials: true})
+await axios.put("https://app-server-4mhe.onrender.com/follow",{followid: userid},{withCredentials: true})
 .then((res)=>{
   console.log(res.data)
   window.location.reload();
@@ -31,7 +31,7 @@ await axios.put("https://gofirebackend.onrender.com/follow",{followid: userid},{
 
 const unfollow = ()=>{
 
-  axios.put("https://gofirebackend.onrender.com/unfollow",{unfollowid: userid},{withCredentials: true})
+  axios.put("https://app-server-4mhe.onrender.com/unfollow",{unfollowid: userid},{withCredentials: true})
   .then((res)=>{
     console.log(res.data)
     window.location.reload();
@@ -43,7 +43,7 @@ const unfollow = ()=>{
   }
   const likepost=(id)=>{
 
-    axios.put("https://gofirebackend.onrender.com/like",{postId:id},{withCredentials:true})
+    axios.put("https://app-server-4mhe.onrender.com/like",{postId:id},{withCredentials:true})
     .then((res)=>{
   console.log(res.data)
   setLike(prevstate=>!prevstate)
@@ -74,7 +74,7 @@ const unfollow = ()=>{
   
   const unlikepost=(id)=>{
   
-    axios.put("https://gofirebackend.onrender.com/unlike",{postId:id},{withCredentials:true})
+    axios.put("https://app-server-4mhe.onrender.com/unlike",{postId:id},{withCredentials:true})
     .then((res)=>{
       console.log(res.data)
       setLike(prevstate=>!prevstate)
@@ -115,7 +115,7 @@ useEffect(() => {
   console.log("running");
   const fetchData = async () => {
     try {
-      const result = await axios.get(`https://gofirebackend.onrender.com/friendsid/${userid}`, {
+      const result = await axios.get(`https://app-server-4mhe.onrender.com/friendsid/${userid}`, {
         withCredentials: true,
       });
       console.log(result.data);
